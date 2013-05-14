@@ -57,3 +57,14 @@ ul li a {
     text-align: center;
 }
 
+#figureContainer {
+    text-align: center;
+}
+
+#addImage {
+    background-color: blue;
+    padding: 1.5em;
+    color: white;
+    text-align: center;
+}
+

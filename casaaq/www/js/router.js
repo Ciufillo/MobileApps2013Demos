@@ -10,6 +10,7 @@ define(["jquery", "underscore", "backbone", "collections/AdCollection", "models/
       },
 
       initialize: function () {
+        this.currentView = undefined;
         $('#back').on('touchend', function (event) {
           window.history.back();
           return false;
@@ -40,7 +41,11 @@ define(["jquery", "underscore", "backbone", "collections/AdCollection", "models/
       },
 
       changePage: function (page) {
-        $('body').empty();
+        if(this.currentView) {
+           this.currentView.remove();
+         }
+
+        this.currentView = page;
         page.render();
         $('body').append($(page.el));
       }
