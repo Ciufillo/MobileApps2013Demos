@@ -1,6 +1,5 @@
 require.config({
   paths: {
-    domReady: '../lib/require/domReady',
     jquery: '../lib/jquery/jquery-1.9.1.min',
     underscore: '../lib/underscore/underscore-min',
     backbone: '../lib/backbone/backbone',
@@ -24,15 +23,13 @@ require.config({
 });
 
 // We launch the App
-require(['domReady', 'underscore', 'backbone', 'router'],
-    function (domReady, _, Backbone, AppRouter) {
+require(['underscore', 'backbone', 'router'],
+    function (_, Backbone, AppRouter) {
 
-    domReady(function () {
       document.addEventListener("deviceready", run, false);
-    });
 
-    function run() {
-      new AppRouter();
-      Backbone.history.start();
-    }
+      function run() {
+        new AppRouter();
+        Backbone.history.start();
+      }
   });

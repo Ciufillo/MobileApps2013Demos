@@ -11,10 +11,6 @@ define(["jquery", "underscore", "backbone", "collections/AdCollection", "models/
 
       initialize: function () {
         this.currentView = undefined;
-        $('#back').on('touchend', function (event) {
-          window.history.back();
-          return false;
-        });
         var ad1 = new Ad({
           title: "Camera1",
           price: "200"
