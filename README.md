@@ -41,3 +41,24 @@ The app is really work in progress and primitive. The main concern of this app i
 we use in the course.
 
 Platforms: PhoneGap (2.6.0), HTML5, CSS3, Javascript, jQuery, BackboneJS, Require.js, Handlebars
+
+EmployeeDirectoryModularClientServer
+------------------------------------
+
+Demo API interface in Java. Please, read and follow carefully the readme file in the provided archive.
+
+Platforms: Tomcat, Jersey, MySQL
+
+ChatWebSocket
+-------------
+
+Demo web app implementing a basic chat room via web sockets.
+
+Technologies: Jetty 8.1, Web Sockets, EclipseJEE
+
+ServerSentEventsJava
+--------------------
+
+Timestamp web app showing the basics of server-sent events.
+
+Used technologies: Tomcat 7.0, Server Sent Events, Eclipse JEE
