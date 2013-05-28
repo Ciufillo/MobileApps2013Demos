@@ -1,0 +1,23 @@
+<html>
+ <head>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, target-densitydpi=device-dpi" />
+  <title>WebSocket Chat Example</title>
+  <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+  <script type='text/javascript' src="chat.js"></script>
+  <link rel="stylesheet" href="topcoat-mobile-light.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+ <body>
+  <div>
+    <input type="text" class="topcoat-text-input top" value="" placeholder="username" id="username">
+    <a class="topcoat-button--cta top" id="joinButton">Join</a>
+    <a class="topcoat-button--cta is-disabled leaveButton" id="leaveButton">Leave</a>
+  </div>
+  <div id="chatLog">
+  </div>
+  <div>
+    <input type="text" class="topcoat-text-input bottom" value="" placeholder="write a message" id="message">
+    <a class="topcoat-button--cta is-disabled bottom" id="sendButton">Send</a>
+  </div>
+ </body>
+</html>

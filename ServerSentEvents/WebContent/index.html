@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body onload="startSSE()">
+	<script>
+		var javaSource = "http://localhost:8080/ServerSentEvents/ServerSentEventsManager";
+		
+        function startSSE() {
+        	var source = new EventSource(javaSource); 
+           
+            source.onmessage = function(event) {
+                document.getElementById("result").innerHTML += event.data + "<br/>";
+            };
+        }
+    </script>
+
+	<output id="result"></output>
+
+</body>
+</html>

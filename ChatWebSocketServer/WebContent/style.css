@@ -1,0 +1,68 @@
+body {
+	background: url(mooning.png);
+	width: 100%;
+}
+
+#chatLog {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 60px;
+	bottom: 60px;
+	border-top: 1px dotted gray;
+	border-bottom: 1px dotted gray;
+	overflow-y: scroll;
+}
+
+.my {
+	display: block;
+	margin: 5px;
+	background-color: #FFF056;
+}
+
+.other {
+	display: block;
+	margin: 5px;
+	color: white;
+	background-color: #DE1B1B;
+}
+
+.bottom {
+	bottom: 2px;
+}
+
+.top {
+	top: 2px;
+}
+
+.topcoat-button--cta {
+	margin: 2px;
+	position: absolute;
+	right: 2px;
+	-webkit-box-shadow: 0;
+  	height: 3rem;
+  	border: 0;
+}
+
+.topcoat-text-input {
+	margin: 2px;
+	position: absolute;
+	left: 2px;
+	-webkit-box-shadow: 0;
+  	height: 3rem;
+  	border: 0;
+}
+
+.leaveButton {
+	position: absolute;
+	z-index: 100;	
+	top: 60px;
+	display: block;
+	text-align: center;
+	background-color: red;
+}
+
+.name {
+	font-weight: bold;
+}
