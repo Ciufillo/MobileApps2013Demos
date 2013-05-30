@@ -1,7 +1,7 @@
-define(["jquery", "underscore", "backbone", "handlebars", "text!templates/ad-list-item.html"],
-    function ($, _, Backbone, Handlebars, template) {
+define(["jquery", "underscore", "parse", "handlebars", "text!templates/ad-list-item.html"],
+    function ($, _, Parse, Handlebars, template) {
 
-    var AdListItemView = Backbone.View.extend({
+    var AdListItemView = Parse.View.extend({
 
         tagName: "li",
 
@@ -24,7 +24,7 @@ define(["jquery", "underscore", "backbone", "handlebars", "text!templates/ad-lis
         },
 
         goToDetails: function () {
-          Backbone.history.navigate("ads/" + this.model.cid, {trigger: true});
+          Parse.history.navigate("ads/" + this.model.cid, {trigger: true});
         }
       });
 

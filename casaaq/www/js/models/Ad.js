@@ -1,6 +1,6 @@
-define(["jquery", "underscore", "backbone"],
-  function ($, _, Backbone) {
-    var Ad = Backbone.Model.extend({
+define(["jquery", "underscore", "parse"],
+  function ($, _, Parse) {
+    var Ad = Parse.Object.extend("Ad", {
       defaults: {
       	title: undefined,
       	price: 0,

@@ -3,7 +3,7 @@
 
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
- /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
 body {
@@ -24,13 +24,119 @@ body {
 
 /* END STANDARD MOBILE */
 
+/* START STRUCTURE */
+
+#mainContainer {
+    position: absolute;
+    height: 100%;
+    width: 200%;
+    margin: 0px;
+    padding: 0px;
+    left: -100%;
+    overflow: hidden;
+    -webkit-transition: left 0.2s;
+}
+
+#mainContainer.is-menu-visible {
+    left: -20%;
+}
+
+#navigation {
+    position: absolute;
+    height: 100%;
+    width: 40%;
+    right: 50%;
+    z-index: 100;
+}
+
+#content {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    right: 0;
+}
+
+#contents {
+    /* */
+}
+
+#titlebar {
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 44px;
+    width: 100%;
+    color: white;
+    background-color: red;
+    text-align: center;
+}
+
+#title {
+    margin: 0 auto;
+    width: 60%;
+    text-overflow: ellipsis;
+    font-size: medium;
+    line-height: 44px;
+    font-size: 1.5em;
+    font-weight: bold;
+    white-space:nowrap; 
+    overflow:hidden;
+}
+
+#menuButton {
+    position:absolute;
+    left: 0;
+    top: 0;
+    margin: 5px;
+    width: 44px;
+    height: 80%;
+    color: black;
+    background-color: yellow;
+    text-align: center;
+    border-radius: 2px; 
+}
+
+#otherButton {
+    position:absolute;
+    right: 0;
+    top: 0;
+    margin: 5px;
+    width: 44px;
+    height: 80%;
+    color: black;
+    background-color: yellow;
+    text-align: center;
+    border-radius: 2px; 
+}
+
+#navigationList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    top:5px;
+    border:#fff solid;
+    border-width:1px;
+    background-color:#999;
+}
+
+.navigationItem {
+    border-bottom: 1px solid #d9e2eb;
+    background: #090909;
+    display: block;
+    color: white;
+    padding: 15px 0px;
+    padding-left: 10px;
+}
+
+/* END STRUCTURE */
+
 #list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-ul li {
+#contents ul li {
     border-bottom: 1px solid #d9e2eb;
     background: #fff;
     display: block;
@@ -40,7 +146,7 @@ ul li {
     /* background-image: -webkit-linear-gradient(top, #ffffff, #ecf1f5); */
 }
 
-ul li a {
+#contents ul li a {
     position: relative;
     display: block;
     text-decoration: none;

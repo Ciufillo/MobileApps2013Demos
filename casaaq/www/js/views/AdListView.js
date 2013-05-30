@@ -1,7 +1,7 @@
-define(["jquery", "underscore", "backbone", "handlebars", "views/AdListItemView", "text!templates/ad-list.html"],
-    function ($, _, Backbone, Handlebars, AdListItemView, template) {
+define(["jquery", "underscore", "parse", "handlebars", "views/AdListItemView", "text!templates/ad-list.html"],
+    function ($, _, Parse, Handlebars, AdListItemView, template) {
 
-    var AdListView = Backbone.View.extend({
+    var AdListView = Parse.View.extend({
 
         tagName: "ul",
         id: "list",

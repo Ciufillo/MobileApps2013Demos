@@ -1,7 +1,7 @@
-define(["jquery", "underscore", "backbone", "handlebars", "text!templates/ad-details.html"],
-    function ($, _, Backbone, Handlebars, template) {
+define(["jquery", "underscore", "parse", "handlebars", "text!templates/ad-details.html"],
+    function ($, _, Parse, Handlebars, template) {
 
-    var AdView = Backbone.View.extend({
+    var AdView = Parse.View.extend({
 
         events: {
           "touchend #addImage": "takeImage",
@@ -12,7 +12,7 @@ define(["jquery", "underscore", "backbone", "handlebars", "text!templates/ad-det
           var options = {
             quality: 50,
             destinationType: Camera.DestinationType.FILE_URL,
-            sourceType: Camera.PictureSourceType.CAMERA,
+            sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
             mediaType: Camera.MediaType.PICTURE,
             cameraDirection: Camera.Direction.BACK,
             allowEdit: false,

@@ -1,10 +1,10 @@
-define(["jquery", "underscore", "backbone", "collections/AdCollection", "models/Ad", "views/AdView", "views/AdListView"],
-    function ($, _, Backbone, AdCollection, Ad, AdView, AdListView) {
+define(["jquery", "underscore", "parse", "collections/AdCollection", "models/Ad", "views/AdView", "views/AdListView", "views/StructureView"],
+    function ($, _, Parse, AdCollection, Ad, AdView, AdListView, StructureView) {
 
-    var AppRouter = Backbone.Router.extend({
+    var AppRouter = Parse.Router.extend({
 
       routes: {
-        "": "list",
+        "": "structure",
         "list": "list",
         "ads/:id": "adDetails"
       },
@@ -20,6 +20,15 @@ define(["jquery", "underscore", "backbone", "collections/AdCollection", "models/
           price: "150"
         });
         this.ads = new AdCollection([ad1, ad2]);
+        this.ads.query = new Parse.Query(Ad);
+      },
+
+      structure: function () {
+        if(!this.structureView) {
+          this.structureView = new StructureView();
+          this.structureView.render();
+        }
+        this.list();
       },
 
       list: function () {
@@ -30,7 +39,7 @@ define(["jquery", "underscore", "backbone", "collections/AdCollection", "models/
       },
 
       adDetails: function (id) {
-        var ad = this.ads.get(id);
+        var ad = this.ads.getByCid(id);
         this.changePage(new AdView({
           model: ad
         }));
@@ -39,11 +48,11 @@ define(["jquery", "underscore", "backbone", "collections/AdCollection", "models/
       changePage: function (page) {
         if(this.currentView) {
            this.currentView.remove();
-         }
-
+        }
         this.currentView = page;
         page.render();
-        $('body').append($(page.el));
+        console.log(this.structureView.$el);
+        this.structureView.$el.find("#content #contents").append($(page.el));
       }
 
     });
