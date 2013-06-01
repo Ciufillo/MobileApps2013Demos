@@ -6,7 +6,8 @@ require.config({
     text: '../lib/require/text-1.0.6',
     async: '../lib/require/async',
     handlebars: '../lib/handlebars/handlebars',
-    templates: '../templates'
+    templates: '../templates',
+    leaflet: '../lib/leaflet/leaflet'
   },
   shim: {
     'jquery': {
@@ -21,6 +22,9 @@ require.config({
     'parse': {
       deps: ['jquery', 'underscore'],
       exports: 'Parse'
+    },
+    'leaflet': {
+      exports: 'L'
     }
   }
 });
@@ -31,7 +35,7 @@ require(['underscore', 'parse', 'router'],
 
       document.addEventListener("deviceready", run, false);
       function run() {
-        Parse.initialize("applicationId", "javascriptKey");
+        Parse.initialize("WcxDz5mVqJzgHVYM3655WJoVDTphUpAcrhOAzS9C", "26MoNXeBtKABSPAaFAGpGpqRbPZUtodLbvqoxXwF");
         new AppRouter();
         Parse.history.start();
       }

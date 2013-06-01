@@ -1,5 +1,5 @@
-define(["jquery", "underscore", "parse", "handlebars", "text!templates/structure.html"],
-    function ($, _, Parse, Handlebars, template) {
+define(["jquery", "underscore", "parse", "handlebars", "leaflet", "text!templates/structure.html"],
+    function ($, _, Parse, Handlebars, L, template) {
 
     var StructureView = Parse.View.extend({
 
@@ -7,6 +7,11 @@ define(["jquery", "underscore", "parse", "handlebars", "text!templates/structure
 
         events: {
           "touchend #menuButton": "toggleMenu",
+          "touchend #otherButton": "showMap"
+        },
+
+        showMap: function () {
+          Parse.history.navigate("map", {trigger: true});
         },
 
         goBack: function () {
